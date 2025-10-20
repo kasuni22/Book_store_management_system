@@ -4,3 +4,6 @@ dist/
 build/
 
 package-lock.json
+
+#Env
+.env
