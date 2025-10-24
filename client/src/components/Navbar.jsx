@@ -14,6 +14,10 @@ const Navbar = () => {
             </div>
         </nav>
         
+
+const Navbar = () => {
+    return (
+        <div>Navbar</div>
     )
 }
 
