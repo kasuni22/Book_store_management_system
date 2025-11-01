@@ -1,9 +1,8 @@
-
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #f8f9fa, #ecf0f1);
+  background: linear-gradient(to right, #F6F6F6, #D6E4F0);
   padding: 80px 60px;
   min-height: 90vh;
   box-sizing: border-box;
@@ -15,7 +14,7 @@
 
 .hero-text {
   font-size: 3rem;
-  color: #2c3e50;
+  color: #163172;
   margin-bottom: 20px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -23,7 +22,7 @@
 
 .hero-description {
   font-size: 1.2rem;
-  color: #555;
+  color: #1E56A0;
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -35,7 +34,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(22, 49, 114, 0.3);
 }
 
 @media (max-width: 900px) {
