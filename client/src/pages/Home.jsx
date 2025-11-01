@@ -1,14 +1,14 @@
 import React from 'react'
-import '../css/home.css'
+import '../css/Home.css'
 
 const Home = () => {
     return (
         <div className='hero'>
             <div className='hero-content'>
-                <h1 className='hero-text'>Book Shop</h1>
+                <h1 className='hero-text'>📚 Welcome to the Book Store</h1>
                 <p className='hero-description'>
-                    Browse the collection of our best top interesting Books.
-                    You will definitely find what you are looking for.
+                    Explore a wide collection of books across various genres.  
+                    From fiction to education — find your next favorite book here!
                 </p>
             </div>
             <div className='hero-image'></div>

@@ -1,0 +1,63 @@
+.dashboard-container {
+  padding: 40px;
+  text-align: center;
+  background-color: #f4f6f9;
+  min-height: 85vh;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  color: #007bff;
+  font-size: 2rem;
+}
+
+.admin-actions {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}

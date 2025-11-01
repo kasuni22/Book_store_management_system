@@ -1,23 +1,29 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
-import Books from './components/Books';
-import Login from './components/Login';
-import Dashboard from "./components/Dashboard";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './pages/Navbar';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Categories from './pages/Categories';
+import MyCart from './pages/MyCart';
+import Login from './pages/Login';
+import AdminDashboard from './pages/dashboard/AdminDashboard';
+import StudentDashboard from './pages/dashboard/StudentDashboard';
 
-function App() {
-
+const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/books" element={<Books />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/mycart" element={<MyCart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/student" element={<StudentDashboard />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
