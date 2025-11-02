@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./db.js";
+import createDefaultAdmin from "./utils/createAdmin.js";
 
 import bookRoutes from "./routes/bookRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
@@ -10,6 +11,8 @@ import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 connectDB();
+createDefaultAdmin(); 
+
 
 const app = express();
 app.use(cors());

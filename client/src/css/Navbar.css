@@ -39,6 +39,19 @@
   color: #F8F8F8;
 }
 
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: inherit;
+  text-decoration: underline;
+}
+.logout-btn:hover {
+  color: #ffdd57;
+}
+
+
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;

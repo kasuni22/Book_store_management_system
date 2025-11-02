@@ -8,19 +8,35 @@ import MyCart from './pages/MyCart';
 import Login from './pages/Login';
 import AdminDashboard from './pages/dashboard/AdminDashboard';
 import StudentDashboard from './pages/dashboard/StudentDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/mycart" element={<MyCart />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/student" element={<StudentDashboard />} />
+
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/student"
+          element={
+            <ProtectedRoute allowedRoles={['student']}>
+              <StudentDashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
