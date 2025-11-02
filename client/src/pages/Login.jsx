@@ -11,21 +11,30 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      if (isSignup) {
-        await axios.post('http://localhost:3001/api/auth/signup', form);
-        alert('Signup successful! Please login.');
-        setIsSignup(false);
+  e.preventDefault();
+  try {
+    if (isSignup) {
+      await axios.post('http://localhost:3001/api/auth/signup', form);
+      alert('Signup successful! Please login.');
+      setIsSignup(false);
+    } else {
+      const res = await axios.post('http://localhost:3001/api/auth/login', form);
+      alert(`Login successful as ${res.data.role}`);
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('role', res.data.role);
+
+      
+      if (res.data.role === 'admin') {
+        window.location.href = '/admin';
       } else {
-        const res = await axios.post('http://localhost:3001/api/auth/login', form);
-        alert(`Login successful as ${res.data.role}`);
-        localStorage.setItem('token', res.data.token);
+        window.location.href = '/student';
       }
-    } catch (err) {
-      alert(err.response?.data?.message || 'Error occurred');
     }
-  };
+  } catch (err) {
+    alert(err.response?.data?.message || 'Error occurred');
+  }
+};
+
 
   return (
     <div className="page-container">
