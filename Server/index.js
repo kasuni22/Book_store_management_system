@@ -1,20 +1,27 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import cors from 'cors'
-import cookieParser from 'cookie-parser'
-import './db.js'
-import { AdminRouter } from './routes/auth.js'
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import connectDB from "./db.js";
 
-const app = express()
-app.use(express.json())
-app.use(cors({
-    origin: ['http://localhost:5173'],
-    credentials: true
-}))
-app.use(cookieParser())
-dotenv.config()
-app.use('/auth', AdminRouter)
+import bookRoutes from "./routes/bookRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import userRoutes from "./routes/userRoutes.js";   
 
-app.listen(process.env.PORT, () => {
-    console.log("Server is Running");
-})
+dotenv.config();
+connectDB();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+
+app.use("/api/books", bookRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/auth", userRoutes);  
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT}`)
+);
