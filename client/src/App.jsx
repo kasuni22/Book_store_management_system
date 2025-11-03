@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import AdminDashboard from './pages/dashboard/AdminDashboard';
 import StudentDashboard from './pages/dashboard/StudentDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import ManageCategories from './pages/admin/ManageCategories';
 
 const App = () => {
   return (
@@ -26,6 +27,14 @@ const App = () => {
           element={
             <ProtectedRoute allowedRoles={['admin']}>
               <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/categories"
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <ManageCategories />
             </ProtectedRoute>
           }
         />
