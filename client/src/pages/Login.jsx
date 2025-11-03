@@ -43,6 +43,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           {isSignup && (
             <>
+            <label className="form-label">First Name</label>
               <input
                 type="text"
                 name="firstName"
@@ -51,6 +52,7 @@ const Login = () => {
                 onChange={handleChange}
                 required
               />
+              <label className="form-label">Last Name</label>
               <input
                 type="text"
                 name="lastName"
@@ -61,6 +63,7 @@ const Login = () => {
               />
             </>
           )}
+          <label className="form-label">Email</label>
           <input
             type="email"
             name="email"
@@ -69,6 +72,7 @@ const Login = () => {
             onChange={handleChange}
             required
           />
+          <label className="form-label">Password </label>
           <input
             type="password"
             name="password"

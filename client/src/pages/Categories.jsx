@@ -3,14 +3,17 @@ import '../css/Pages.css';
 
 const Categories = () => {
   const categories = [
-    "Fiction",
-    "Science & Technology",
+    "New Arrivels",
+    "Children's Book",
     "Education",
+    "Science & Technology",
+    "Poems",
+    "Cookery",
+    "Novels",
+    "Translation",
     "Romance",
-    "History",
-    "Comics",
-    "Fantasy",
-    "Biography",
+    "Others",
+    
   ];
 
   return (

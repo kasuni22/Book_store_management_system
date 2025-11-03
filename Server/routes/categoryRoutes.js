@@ -1,47 +1,16 @@
 import express from "express";
-import Category from "../models/Category.js";
+import {
+  createCategory,
+  getCategories,
+  updateCategory,
+  deleteCategory,
+} from "../controllers/categoryController.js";
 
 const router = express.Router();
 
-
-router.post("/", async (req, res) => {
-  try {
-    const category = new Category(req.body);
-    await category.save();
-    res.status(201).json(category);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-
-router.get("/", async (req, res) => {
-  try {
-    const categories = await Category.find();
-    res.json(categories);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-
-router.put("/:id", async (req, res) => {
-  try {
-    const updated = await Category.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(updated);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-
-router.delete("/:id", async (req, res) => {
-  try {
-    await Category.findByIdAndDelete(req.params.id);
-    res.json({ message: "Category deleted" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+router.post("/", createCategory);
+router.get("/", getCategories);
+router.put("/:id", updateCategory);
+router.delete("/:id", deleteCategory);
 
 export default router;

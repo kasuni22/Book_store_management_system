@@ -1,41 +1,63 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../../css/Dashboard.css';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../../css/Dashboard.css";
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
     totalBooks: 0,
+    totalCategories: 0,
     totalStudents: 0,
     totalOrders: 0,
   });
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    
     const fetchStats = async () => {
       try {
-        const books = await axios.get('http://localhost:3001/api/books');
-        const students = await axios.get('http://localhost:3001/api/users');
-        const orders = await axios.get('http://localhost:3001/api/orders');
+        const [booksRes, categoriesRes, studentsRes, ordersRes] = await Promise.all([
+          axios.get("http://localhost:3001/api/books"),
+          axios.get("http://localhost:3001/api/categories"),
+          axios.get("http://localhost:3001/api/auth"),
+          axios.get("http://localhost:3001/api/orders"),
+        ]);
 
         setStats({
-          totalBooks: books.data.length,
-          totalStudents: students.data.length,
-          totalOrders: orders.data.length,
+          totalBooks: booksRes.data.length,
+          totalCategories: categoriesRes.data.length,
+          totalStudents: studentsRes.data.length,
+          totalOrders: ordersRes.data.length,
         });
       } catch (err) {
-        console.log('Error fetching stats:', err.message);
+        console.log("Error fetching stats:", err.message);
       }
     };
+
     fetchStats();
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    navigate("/login");
+  };
+
   return (
     <div className="dashboard-container">
-      <h1>📊 Admin Dashboard</h1>
+      <div className="dashboard-header">
+        <h1>📊 Admin Dashboard</h1>
+      </div>
+
+      
       <div className="stats-grid">
         <div className="card">
           <h2>{stats.totalBooks}</h2>
           <p>Total Books</p>
+        </div>
+        <div className="card">
+          <h2>{stats.totalCategories}</h2>
+          <p>Total Categories</p>
         </div>
         <div className="card">
           <h2>{stats.totalStudents}</h2>
@@ -47,11 +69,20 @@ const AdminDashboard = () => {
         </div>
       </div>
 
+      
       <div className="admin-actions">
-        <button className="btn">📚 Manage Books</button>
-        <button className="btn">🗂️ Manage Categories</button>
-        <button className="btn">👩‍🎓 Manage Students</button>
-        <button className="btn">🛍️ View Orders</button>
+        <button className="btn" onClick={() => navigate("/admin/books")}>
+          📚 Manage Books
+        </button>
+        <button className="btn" onClick={() => navigate("/admin/categories")}>
+          🗂️ Manage Categories
+        </button>
+        <button className="btn" onClick={() => navigate("/admin/students")}>
+          👩‍🎓 Manage Students
+        </button>
+        <button className="btn" onClick={() => navigate("/admin/orders")}>
+          🛍️ View Orders
+        </button>
       </div>
     </div>
   );
