@@ -61,6 +61,10 @@
   margin-bottom: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
+.cat-id {
+  color: #888;
+  font-size: 0.9rem;
+}
 
 .cart-list {
   list-style: none;
