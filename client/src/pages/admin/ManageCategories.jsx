@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../css/Pages.css";
+import AdminNavbar from "../../components/AdminNavbar";
+
 
 const ManageCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -53,6 +55,8 @@ const ManageCategories = () => {
   };
 
   return (
+    <>
+    <AdminNavbar />
     <div className="page-container">
       <h1>📚 Manage Categories</h1>
 
@@ -93,6 +97,7 @@ const ManageCategories = () => {
             ) : (
               <>
                 <h3>{cat.name}</h3>
+                <p className="cat-id">ID: {cat.categoryId}</p>
                 {cat.image && <img src={cat.image} alt={cat.name} className="cat-img" />}
                 <div>
                   <button className="btn" onClick={() => { setEditMode(cat._id); setNewCategory(cat); }}>✏️ Edit</button>
@@ -104,6 +109,7 @@ const ManageCategories = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

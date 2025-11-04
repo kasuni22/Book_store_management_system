@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../css/Dashboard.css";
+import AdminNavbar from "../../components/AdminNavbar";
+
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
@@ -44,6 +46,8 @@ const AdminDashboard = () => {
   };
 
   return (
+    <>
+    <AdminNavbar />
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h1>📊 Admin Dashboard</h1>
@@ -85,6 +89,8 @@ const AdminDashboard = () => {
         </button>
       </div>
     </div>
+    </>
+
   );
 };
 
