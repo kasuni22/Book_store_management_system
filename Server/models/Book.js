@@ -1,13 +1,16 @@
 import mongoose from "mongoose";
 
 const bookSchema = new mongoose.Schema({
-  ISBN: { type: String, required: true, unique: true },
-  name: { type: String, required: true },
-  author: String,
-  category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+  isbn: { type: String, required: true },
+  title: { type: String, required: true },
+  author: { type: String, required: true },
+  publisher: String,
+  year: Number,
   price: Number,
-  quantity: Number,
-  image: String
+  category: { type: String, required: true },
+  coverImage: String,
+  quantity: { type: Number, default: 0 },
+  inStock: { type: Boolean, default: true }
 });
 
 export default mongoose.model("Book", bookSchema);
