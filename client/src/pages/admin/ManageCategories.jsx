@@ -83,7 +83,7 @@ const ManageCategories = () => {
       
       <div className="category-list">
         {categories.map((cat) => (
-          <div key={cat._id} className="category-card">
+          <div key={cat._id} className="card">
             {editMode === cat._id ? (
               <>
                 <input
@@ -98,7 +98,7 @@ const ManageCategories = () => {
               <>
                 <h3>{cat.name}</h3>
                 <p className="cat-id">ID: {cat.categoryId}</p>
-                {cat.image && <img src={cat.image} alt={cat.name} className="cat-img" />}
+                {cat.image && <img src={cat.image} alt={cat.name} className="img" />}
                 <div>
                   <button className="btn" onClick={() => { setEditMode(cat._id); setNewCategory(cat); }}>✏️ Edit</button>
                   <button className="btn" onClick={() => handleDelete(cat._id)}>🗑️ Delete</button>

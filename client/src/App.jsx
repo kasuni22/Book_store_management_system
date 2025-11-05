@@ -10,6 +10,7 @@ import AdminDashboard from './pages/dashboard/AdminDashboard';
 import StudentDashboard from './pages/dashboard/StudentDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ManageCategories from './pages/admin/ManageCategories';
+import ManageBooks from './pages/admin/ManageBooks';
 
 const App = () => {
   return (
@@ -38,6 +39,8 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/admin/books" element={<ManageBooks />} />
+
         <Route
           path="/student"
           element={
