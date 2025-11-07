@@ -11,6 +11,9 @@ import StudentDashboard from './pages/dashboard/StudentDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ManageCategories from './pages/admin/ManageCategories';
 import ManageBooks from './pages/admin/ManageBooks';
+import CategoryBooks from './pages/CategoryBooks';
+import BookDetails from './pages/BookDetails';
+
 
 const App = () => {
   return (
@@ -49,7 +52,10 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/category/:name" element={<CategoryBooks />} />
+        <Route path="/book/:id" element={<BookDetails />} />
       </Routes>
+
     </>
   );
 };
