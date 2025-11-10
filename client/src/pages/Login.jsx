@@ -27,6 +27,7 @@ const Login = () => {
       if (res.data.role === 'admin') {
         window.location.href = '/admin';
       } else {
+        localStorage.setItem("email", form.email);
         window.location.href = '/student';
       }
     }

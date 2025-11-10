@@ -1,0 +1,91 @@
+.profile-page {
+  color: #163172;
+  background-color: #f6f6f6;
+  min-height: 100vh;
+}
+
+.profile-header {
+  position: relative;
+}
+
+.profile-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 20, 21, 0.6);
+}
+
+.profile-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-container {
+  display: flex;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1100px;
+  gap: 30px;
+}
+
+.sidebar {
+  width: 250px;
+  background: #d6e4f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(22, 49, 114, 0.2);
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 16px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #163172;
+  transition: 0.3s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: #1e56a0;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 6px rgba(22, 49, 114, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+

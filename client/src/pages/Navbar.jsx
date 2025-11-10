@@ -25,6 +25,7 @@ const Navbar = () => {
         <Link to="/aboutus" className='navbar-link'>About Us</Link>
         <Link to="/categories" className='navbar-link'>Categories</Link>
         <Link to="/mycart" className='navbar-link'>My Cart</Link>
+        <Link to="/profile" className='navbar-link'>My Profile</Link>
 
       
         {!token ? (
