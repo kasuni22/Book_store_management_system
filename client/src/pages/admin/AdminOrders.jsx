@@ -10,7 +10,7 @@ const AdminOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/orders");
+        const res = await axios.get("https://book-store-management-system-server.onrender.com/api/orders");
         setOrders(res.data);
       } catch (err) {
         console.log("Error fetching orders:", err.message);
