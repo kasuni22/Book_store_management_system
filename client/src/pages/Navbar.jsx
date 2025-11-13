@@ -24,10 +24,10 @@ const Navbar = () => {
         <Link to="/" className='navbar-link'>Home</Link>
         <Link to="/aboutus" className='navbar-link'>About Us</Link>
         <Link to="/categories" className='navbar-link'>Categories</Link>
-        <Link to="/mycart" className='navbar-link'>My Cart</Link>
+        <Link to="/myorders" className='navbar-link'>My Orders</Link>
         <Link to="/profile" className='navbar-link'>My Profile</Link>
 
-      
+
         {!token ? (
           <Link to="/login" className='navbar-link'>Sign Up / Login</Link>
         ) : (

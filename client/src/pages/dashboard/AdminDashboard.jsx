@@ -4,7 +4,6 @@ import axios from "axios";
 import "../../css/Dashboard.css";
 import AdminNavbar from "../../components/AdminNavbar";
 
-
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
     totalBooks: 0,
@@ -18,16 +17,18 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const books = await axios.get('http://localhost:3001/api/books');
-        const categories = await axios.get('http://localhost:3001/api/categories');
-        const orders = await axios.get('http://localhost:3001/api/orders');
+
+        const booksRes = await axios.get("http://localhost:3001/api/books");
+        const categoriesRes = await axios.get("http://localhost:3001/api/categories");
+        const ordersRes = await axios.get("http://localhost:3001/api/orders");
+        const studentsRes = await axios.get("http://localhost:3001/api/auth");
 
         setStats({
-          totalBooks: books.data.length,
-          totalStudents: categories.data.length, 
-          totalOrders: orders.data.length,
+          totalBooks: booksRes.data.length,
+          totalCategories: categoriesRes.data.length,
+          totalStudents: studentsRes.data.length,
+          totalOrders: ordersRes.data.length,
         });
-
       } catch (err) {
         console.log("Error fetching stats:", err.message);
       }
@@ -50,7 +51,6 @@ const AdminDashboard = () => {
           <h1>📊 Admin Dashboard</h1>
         </div>
 
-
         <div className="stats-grid">
           <div className="card">
             <h2>{stats.totalBooks}</h2>
@@ -70,7 +70,6 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-
         <div className="admin-actions">
           <button className="btn" onClick={() => navigate("/admin/books")}>
             📚 Manage Books
@@ -87,7 +86,6 @@ const AdminDashboard = () => {
         </div>
       </div>
     </>
-
   );
 };
 

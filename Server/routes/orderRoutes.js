@@ -17,6 +17,7 @@ router.post("/", async (req, res) => {
 
     const order = new Order({
       userEmail,
+      bookId,
       bookName: book.title,
       bookPrice: book.price,
     });
@@ -29,16 +30,16 @@ router.post("/", async (req, res) => {
     }
     await book.save();
 
-    res.status(201).json({ message: "Order placed successfully", order });
+    res.status(201).json({ message: "Book ordered successfully!", order });
   } catch (err) {
-    console.error(err);
+    console.error("Order Error:", err);
     res.status(500).json({ message: "Error placing order" });
   }
 });
 
 router.get("/", async (req, res) => {
   try {
-    const orders = await Order.find();
+    const orders = await Order.find().sort({ orderDate: -1 });
     res.json(orders);
   } catch (err) {
     res.status(500).json({ message: err.message });
