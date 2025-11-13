@@ -14,11 +14,11 @@ const Login = () => {
     e.preventDefault();
     try {
       if (isSignup) {
-        await axios.post('http://localhost:3001/api/auth/signup', form);
+        await axios.post('https://book-store-management-system-server.onrender.com/api/auth/signup', form);
         alert('Signup successful! Please login.');
         setIsSignup(false);
       } else {
-        const res = await axios.post('http://localhost:3001/api/auth/login', form);
+        const res = await axios.post('https://book-store-management-system-server.onrender.com/api/auth/login', form);
         alert(`Login successful as ${res.data.role}`);
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('role', res.data.role);
