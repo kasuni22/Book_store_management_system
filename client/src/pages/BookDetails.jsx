@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/Pages.css";
+import "../css/BookDetails.css";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -9,7 +10,33 @@ const BookDetails = () => {
   const [book, setBook] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  const [wishlist, setWishlist] = useState([]);
+  const userEmail = localStorage.getItem("email") || "student@example.com";
+
+
+  const handleAddToWishlist = () => {
+    let storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+
+    if (storedWishlist.find((item) => item._id === book._id)) {
+      alert(" This book is already in your wishlist!");
+      return;
+    }
+
+    storedWishlist.push({
+      _id: book._id,
+      title: book.title,
+      author: book.author,
+      price: book.price,
+      coverImage: book.coverImage,
+    });
+
+    localStorage.setItem("wishlist", JSON.stringify(storedWishlist));
+    setWishlist(storedWishlist);
+    alert(" Book added to your wishlist!");
+  };
 
 
   useEffect(() => {
@@ -39,16 +66,30 @@ const BookDetails = () => {
 
   if (!book) return <p className="loading-text">Loading...</p>;
 
-  const handleAddToCart = () => {
-    alert(`${book.title} added to cart (Qty: ${quantity})`);
+
+  const handleOrder = async () => {
+    if (!book.inStock) return alert("Sorry, this book is out of stock.");
+
+    try {
+      setLoading(true);
+      const res = await axios.post("http://localhost:3001/api/orders", {
+        userEmail,
+        bookId: book._id,
+      });
+      alert(" Order placed successfully!");
+    } catch (err) {
+      console.error("Error placing order:", err);
+      alert(" Failed to place order. Try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="category-books-page">
 
-
       <div
-        className="category-hero"
+        className="category-hero book-banner"
         style={{
           backgroundImage:
             "url('https://res.cloudinary.com/dgdpuo8og/image/upload/v1762168368/9_bk0mab.jpg')",
@@ -56,8 +97,6 @@ const BookDetails = () => {
       >
         <div className="overlay">
           <h1 className="header-title">📖 Book Details</h1>
-
-
           <div className="category-bar">
             {categories.map((cat) => (
               <span
@@ -72,7 +111,6 @@ const BookDetails = () => {
         </div>
       </div>
 
-
       <div className="book-details-wrapper">
         <div className="book-details-image">
           <img
@@ -86,12 +124,11 @@ const BookDetails = () => {
           <h1 className="detail-title">{book.title}</h1>
 
           <div className="price-section">
-            <span className="old-price">Rs. {(book.price + 200).toFixed(2)}</span>
+            <span className="old-price">Rs. {(book.price + 100).toFixed(2)}</span>
             <span className="new-price">Rs. {book.price.toFixed(2)}</span>
-            <span className="discount">10% OFF</span>
+
           </div>
 
-          <p className="vat-text">*inclusive of VAT</p>
           <p className="delivery-text">📦 Delivery in 5–7 working days</p>
 
           <div className="quantity-cart">
@@ -106,9 +143,9 @@ const BookDetails = () => {
             <button
               className="btn add-to-cart"
               disabled={!book.inStock}
-              onClick={handleAddToCart}
+              onClick={handleOrder}
             >
-              🛒 Add to Cart
+              {loading ? "Processing..." : "📘 Order Book"}
             </button>
           </div>
 
@@ -127,7 +164,10 @@ const BookDetails = () => {
             </p>
           </div>
 
-          <button className="wishlist-btn">♡ Add to Wishlist</button>
+          <button className="wishlist-btn" onClick={handleAddToWishlist}>
+            ♡ Add to Wishlist
+          </button>
+
         </div>
       </div>
 

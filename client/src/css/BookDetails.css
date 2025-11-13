@@ -1,0 +1,65 @@
+.book-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #1e56a0;
+}
+
+.book-banner .overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1px 20px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.book-banner .header-title {
+  color: #fff;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.book-banner .category-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.book-banner .category-link {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.book-banner .category-link:hover {
+  background: #1e56a0;
+  transform: translateY(-2px);
+}
+
+
+.add-to-cart {
+  background-color: #1e56a0;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #163172;
+}
+
+.add-to-cart:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
