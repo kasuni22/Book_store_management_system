@@ -22,7 +22,7 @@ const ManageBooks = () => {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/books");
+      const res = await axios.get("https://book-store-management-system-server.onrender.com/api/books");
       setBooks(res.data);
     } catch (err) {
       console.log("Error fetching books:", err.message);
