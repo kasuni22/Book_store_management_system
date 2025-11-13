@@ -9,7 +9,7 @@ const Categories = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const res = await axios.get('http://localhost:3001/api/categories');
+      const res = await axios.get('https://book-store-management-system-server.onrender.com/api/categories');
       setCategories(res.data);
     };
     fetchCategories();
