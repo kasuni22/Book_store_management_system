@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../../css/Dashboard.css';
+import '../../css/ManageBooks.css';
 import AdminNavbar from "../../components/AdminNavbar";
 
 const ManageBooks = () => {
@@ -96,7 +96,7 @@ const ManageBooks = () => {
   return (
     <>
       <AdminNavbar />
-      <div className="dashboard-container">
+      <div className="admin-dashboard-container">
         <h1>📚 Book Details</h1>
 
         <div className="toolbar">

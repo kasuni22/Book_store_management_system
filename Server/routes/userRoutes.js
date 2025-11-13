@@ -1,12 +1,15 @@
 import express from "express";
-import { signup, login } from "../controllers/authController.js";
+import { signup, login, getProfile, updateProfile } from "../controllers/authController.js";
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.post("/signup", signup);
 router.post("/login", login);
+router.get("/profile", authMiddleware, getProfile);
+router.put("/update", authMiddleware, updateProfile);
 
 router.get("/", async (req, res) => {
   try {

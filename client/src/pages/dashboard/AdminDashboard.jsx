@@ -46,7 +46,7 @@ const AdminDashboard = () => {
   return (
     <>
       <AdminNavbar />
-      <div className="dashboard-container">
+      <div className="admin-dashboard-container">
         <div className="dashboard-header">
           <h1>📊 Admin Dashboard</h1>
         </div>
@@ -84,6 +84,43 @@ const AdminDashboard = () => {
             🛍️ View Orders
           </button>
         </div>
+
+        <div className="profile-section">
+          <h2>🧑‍💼 Edit Profile</h2>
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const token = localStorage.getItem("token");
+              try {
+                await axios.put(
+                  "http://localhost:3001/api/auth/update",
+                  {
+                    firstName: e.target.firstName.value,
+                    lastName: e.target.lastName.value,
+                    password: e.target.password.value,
+                  },
+                  {
+                    headers: { Authorization: `Bearer ${token}` },
+                  }
+                );
+                alert("Profile updated successfully!");
+              } catch (err) {
+                alert("Error updating profile");
+              }
+            }}
+          >
+            <input name="firstName" placeholder="First Name" required />
+            <input name="lastName" placeholder="Last Name" required />
+            <input
+              name="password"
+              type="password"
+              placeholder="New Password"
+              required
+            />
+            <button type="submit" className="btn">💾 Update</button>
+          </form>
+        </div>
+
       </div>
     </>
   );
