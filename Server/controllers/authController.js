@@ -2,6 +2,8 @@ import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+const frontend_URL = 'https://book-store-management-system-client.onrender.com/';
+
 export const signup = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
