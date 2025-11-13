@@ -42,7 +42,7 @@ const BookDetails = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/categories");
+        const res = await axios.get("https://book-store-management-system-server.onrender.com/api/categories");
         setCategories(res.data);
       } catch (err) {
         console.log("Error fetching categories:", err.message);
@@ -55,7 +55,7 @@ const BookDetails = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/books/${id}`);
+        const res = await axios.get(`https://book-store-management-system-server.onrender.com/api/books/${id}`);
         setBook(res.data);
       } catch (err) {
         console.log("Error fetching book:", err.message);
@@ -72,7 +72,7 @@ const BookDetails = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3001/api/orders", {
+      const res = await axios.post("https://book-store-management-system-server.onrender.com/api/orders", {
         userEmail,
         bookId: book._id,
       });
