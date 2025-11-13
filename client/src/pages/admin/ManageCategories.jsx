@@ -11,7 +11,7 @@ const ManageCategories = () => {
 
 
   const fetchCategories = async () => {
-    const res = await axios.get("http://localhost:3001/api/categories");
+    const res = await axios.get("https://book-store-management-system-server.onrender.com/api/categories");
     setCategories(res.data);
   };
 
@@ -23,7 +23,7 @@ const ManageCategories = () => {
   const handleAdd = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/api/categories", newCategory);
+      await axios.post("https://book-store-management-system-server.onrender.com/api/categories", newCategory);
       setNewCategory({ name: "", image: "" });
       fetchCategories();
       alert("Category added!");
@@ -35,7 +35,7 @@ const ManageCategories = () => {
 
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`http://localhost:3001/api/categories/${id}`, newCategory);
+      await axios.put(`https://book-store-management-system-server.onrender.com/api/categories/${id}`, newCategory);
       setEditMode(null);
       setNewCategory({ name: "", image: "" });
       fetchCategories();
@@ -48,7 +48,7 @@ const ManageCategories = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Delete this category?")) {
-      await axios.delete(`http://localhost:3001/api/categories/${id}`);
+      await axios.delete(`https://book-store-management-system-server.onrender.com/api/categories/${id}`);
       fetchCategories();
       alert("Deleted!");
     }
