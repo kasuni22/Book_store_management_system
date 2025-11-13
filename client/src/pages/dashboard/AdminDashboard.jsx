@@ -18,10 +18,10 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
 
-        const booksRes = await axios.get("http://localhost:3001/api/books");
-        const categoriesRes = await axios.get("http://localhost:3001/api/categories");
-        const ordersRes = await axios.get("http://localhost:3001/api/orders");
-        const studentsRes = await axios.get("http://localhost:3001/api/auth");
+        const booksRes = await axios.get("https://book-store-management-system-server.onrender.com/api/books");
+        const categoriesRes = await axios.get("https://book-store-management-system-server.onrender.com/api/categories");
+        const ordersRes = await axios.get("https://book-store-management-system-server.onrender.com/api/orders");
+        const studentsRes = await axios.get("https://book-store-management-system-server.onrender.com/api/auth");
 
         setStats({
           totalBooks: booksRes.data.length,
