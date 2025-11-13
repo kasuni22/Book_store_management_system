@@ -22,7 +22,7 @@ const StudentDashboard = () => {
     if (!userEmail) return;
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/auth/${userEmail}`);
+        const res = await axios.get(`https://book-store-management-system-server.onrender.com/api/auth/${userEmail}`);
         setUser(res.data);
       } catch (err) {
         console.log("Error fetching user:", err.message);
@@ -38,7 +38,7 @@ const StudentDashboard = () => {
 
   const handleOrder = async (bookId) => {
     try {
-      const res = await axios.post("http://localhost:3001/api/orders", {
+      const res = await axios.post("https://book-store-management-system-server.onrender.com/api/orders", {
         userEmail,
         bookId,
       });
