@@ -10,7 +10,7 @@ const MyOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/orders");
+        const res = await axios.get("https://book-store-management-system-server.onrender.com/api/orders");
 
         const userOrders = res.data.filter(order => order.userEmail === userEmail);
         setOrders(userOrders);
