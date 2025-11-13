@@ -9,7 +9,7 @@ const ManageStudents = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/auth");
+        const res = await axios.get("https://book-store-management-system-server.onrender.com/api/auth");
         setStudents(res.data);
       } catch (err) {
         console.log("Error fetching students:", err.message);
