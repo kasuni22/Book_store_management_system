@@ -1,65 +1,83 @@
-.manage-students-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.manage-students-container h1 {
-  font-size: 2rem;
-  text-align: center;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.manage-students-container p {
-  text-align: center;
-  color: #666;
-  margin-bottom: 30px;
-}
-
 .student-table {
   width: 100%;
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .student-table th,
 .student-table td {
   padding: 14px 16px;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .student-table th {
-  background-color: #6d9acb;
-  color: white;
+  background: #00c4ff;
+  color: #0f172a;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .student-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .student-table tr:hover {
-  background-color: #eef5ff;
-  transition: 0.2s ease;
+  background-color: rgba(0, 196, 255, 0.1);
+  transition: 0.3s ease;
 }
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.edit {
+  background-color: #00c4ff;
+  color: #0f172a;
+}
+
+.btn.edit:hover {
+  background-color: #00a2d4;
+}
+
+.btn.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn.delete:hover {
+  background-color: #b02a37;
+}
+
 
 .no-students {
   text-align: center;
   font-size: 1.1rem;
-  color: #888;
-  margin-top: 20px;
+  color: #94a3b8;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
+  .manage-students-container {
+    padding: 20px;
+  }
 
   .student-table th,
   .student-table td {
@@ -67,7 +85,7 @@
     font-size: 0.9rem;
   }
 
-  .manage-students-container {
-    padding: 20px;
+  .action-buttons {
+    flex-direction: column;
   }
 }

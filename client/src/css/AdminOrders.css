@@ -1,0 +1,116 @@
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.orders-table th {
+  background: #00c4ff;
+  color: #0f172a;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.orders-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.orders-table tr:hover {
+  background-color: rgba(0, 196, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.status {
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.status.pending {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 1px solid #ffc107;
+}
+
+.status.completed {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.status.cancelled {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 4px;
+}
+
+.btn.update {
+  background-color: #00c4ff;
+  color: #0f172a;
+}
+
+.btn.update:hover {
+  background-color: #00a2d4;
+}
+
+.btn.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn.delete:hover {
+  background-color: #b02a37;
+}
+
+
+.page-container p {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 25px;
+}
+
+
+@media (max-width: 768px) {
+  .orders-table {
+    font-size: 0.85rem;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 10px 8px;
+  }
+
+  .page-container {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}

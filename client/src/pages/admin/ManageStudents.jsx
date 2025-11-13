@@ -21,7 +21,7 @@ const ManageStudents = () => {
   return (
     <>
       <AdminNavbar />
-      <div className="page-container">
+      <div className="admin-dashboard-container">
         <h1>👩‍🎓 Manage Students</h1>
         <p>View all registered student accounts</p>
 
