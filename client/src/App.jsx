@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <div className="page-wrapper" style={{ backgroundColor: '#f7f9fc', minHeight: '100vh' }}>
+      <div className="page-wrapper" style={{ backgroundColor: '#04122b', minHeight: '100vh' }}>
         {!hideNavbar && <Navbar />}
 
         <Routes>
