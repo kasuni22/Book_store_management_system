@@ -24,9 +24,10 @@ const App = () => {
 
   return (
     <>
-      {!hideNavbar && <Navbar />}
+      <div className="page-wrapper" style={{ backgroundColor: '#f7f9fc', minHeight: '100vh' }}>
+        {!hideNavbar && <Navbar />}
 
-      <Routes>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/categories" element={<Categories />} />
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="/category/:name" element={<CategoryBooks />} />
         <Route path="/book/:id" element={<BookDetails />} />
       </Routes>
+      </div>
       <Footer />
     </>
   );

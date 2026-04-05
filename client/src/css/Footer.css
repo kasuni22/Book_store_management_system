@@ -4,7 +4,7 @@
   border-top: none;
   outline: none;
   box-shadow: none;
-  background-color: #0a1628;
+  background-color: #0a1628 !important;
   color: #8a9aba;
   font-family: 'DM Sans', sans-serif;
   margin-top: 0;
