@@ -2,72 +2,78 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #324E7B; 
-  padding: 12px 40px;
-  color: #F8F8F8;
-  box-shadow: 0 2px 6px rgba(50, 78, 123, 0.3);
+  background: linear-gradient(to right, var(--navy-dark), var(--navy-main));
+  padding: 16px 50px;
+  color: var(--text-light);
+  box-shadow: 0 4px 15px rgba(4, 18, 43, 0.5);
+  border-bottom: 2px solid var(--gold-dark);
 }
 
 .navbar-brand {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
-  color: #86A6DF; 
-  transition: color 0.3s ease;
+  background: linear-gradient(to right, var(--gold-light), var(--gold-main));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.3s ease;
 }
 
 .navbar-brand:hover {
-  color: #F8F8F8;
+  opacity: 0.85;
 }
 
 .navbar-right {
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  align-items: center;
 }
 
 .navbar-link {
   text-decoration: none;
-  color: #F8F8F8;
-  font-size: 1rem;
+  color: var(--text-light);
+  font-size: 1.05rem;
+  font-weight: 500;
   transition: all 0.3s ease;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 6px;
+  position: relative;
 }
 
 .navbar-link:hover {
-  background-color: #5068A9; 
-  color: #F8F8F8;
+  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .logout-btn {
-  background: none;
-  border: none;
-  color: white;
+  background: transparent;
+  border: 1px solid var(--gold-main);
+  color: var(--gold-light);
   cursor: pointer;
-  font-size: inherit;
-  text-decoration: underline;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
 }
+
 .logout-btn:hover {
-  color: #ffdd57;
+  background: var(--gold-main);
+  color: var(--navy-dark);
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 20px;
+    padding: 15px 20px;
   }
-
   .navbar-right {
-    flex-direction: column;
+    margin-top: 15px;
     width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
-  }
-
-  .navbar-link {
-    width: 100%;
-    text-align: left;
   }
 }

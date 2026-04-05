@@ -1,0 +1,36 @@
+:root {
+  --navy-dark: #04122b;
+  --navy-main: #0C2D6B;
+  --navy-light: #1A4DB5;
+  
+  --gold-dark: #9a7a2e;
+  --gold-main: #C9A84C;
+  --gold-light: #e8c96e;
+
+  --text-dark: #04122b;
+  --text-light: #f8f9fc;
+  --bg-color: #f7f9fc;
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .hero-text, .navbar-brand {
+  font-family: var(--font-heading);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}

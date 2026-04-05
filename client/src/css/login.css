@@ -3,71 +3,94 @@
   justify-content: center;
   align-items: center;
   min-height: 90vh;
-  background-color: #f7f9fc;
+  background: linear-gradient(135deg, var(--bg-color), #e2e8f0);
 }
 
 .login-box {
-  background-color: #fff;
-  padding: 40px 50px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 360px;
+  background-color: #ffffff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(4, 18, 43, 0.08);
+  width: 420px;
   text-align: center;
-  color: #163172;
+  border-top: 6px solid var(--gold-main);
 }
 
 .login-box h2 {
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  color: #163172;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: var(--navy-dark);
   font-weight: 700;
+}
+
+.form-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--navy-main);
+  font-size: 0.95rem;
 }
 
 .login-box input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
   outline: none;
-  transition: border 0.2s;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
 }
 
 .login-box input:focus {
-  border-color: #1e56a0;
+  border-color: var(--navy-light);
+  box-shadow: 0 0 0 3px rgba(26, 77, 181, 0.15);
+  background: #ffffff;
 }
 
-.login-box button {
-  background-color: #1e56a0;
-  color: white;
+.login-box button.btn {
+  background: linear-gradient(to right, var(--navy-main), var(--navy-light));
+  color: var(--gold-light);
   border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
+  padding: 16px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
 }
 
-.login-box button:hover {
-  background-color: #163172;
+.login-box button.btn:hover {
+  background: linear-gradient(to right, var(--navy-dark), var(--navy-main));
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(12, 45, 107, 0.25);
 }
 
 .toggle-btn {
   background: none;
   border: none;
-  color: #1e56a0;
-  margin-left: 5px;
+  color: var(--gold-main);
+  margin-left: 6px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   transition: color 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 .toggle-btn:hover {
-  color: #163172;
+  color: var(--navy-main);
+  text-decoration: underline;
 }
 
 .login-box p {
-  margin-top: 15px;
-  color: #333;
+  margin-top: 30px;
+  color: #475569;
+  font-size: 1rem;
 }
