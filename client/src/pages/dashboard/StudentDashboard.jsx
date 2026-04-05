@@ -65,13 +65,7 @@ const StudentDashboard = () => {
         className="profile-header"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/dgdpuo8og/image/upload/v1762690488/7_dylrfs.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          padding: "60px 0",
-          color: "white",
-          textAlign: "center",
-          position: "relative",
+            "url('https://res.cloudinary.com/dgdpuo8og/image/upload/v1762690488/7_dylrfs.jpg')"
         }}
       >
         <div className="overlay"></div>

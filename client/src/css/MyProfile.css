@@ -1,11 +1,19 @@
+/* MyProfile.css Redesigned for Navy & Gold Theme */
 .profile-page {
-  color: #163172;
-  background-color: #f6f6f6;
+  color: var(--text-dark);
+  background-color: var(--bg-color);
   min-height: 100vh;
 }
 
 .profile-header {
   position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: #fff;
+  text-align: center;
+  border-bottom: 4px solid var(--gold-main);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .profile-header .overlay {
@@ -14,31 +22,42 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(20, 20, 21, 0.6);
+  background: linear-gradient(135deg, rgba(4, 18, 43, 0.95), rgba(12, 45, 107, 0.8));
 }
 
 .profile-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
   position: relative;
   z-index: 2;
+  color: var(--gold-light);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.profile-header p {
+  position: relative;
+  z-index: 2;
+  color: #e2e8f0;
+  font-size: 1.1rem;
 }
 
 .profile-container {
   display: flex;
-  margin: 40px auto;
+  margin: 50px auto;
   width: 90%;
   max-width: 1100px;
-  gap: 30px;
+  gap: 40px;
 }
 
 .sidebar {
-  width: 250px;
-  background: #d6e4f0;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(22, 49, 114, 0.2);
-  padding: 20px;
+  width: 280px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(4, 18, 43, 0.08);
+  padding: 25px;
+  border-top: 5px solid var(--navy-main);
+  align-self: flex-start;
 }
 
 .sidebar ul {
@@ -47,45 +66,93 @@
 }
 
 .sidebar li {
-  padding: 12px 16px;
-  margin: 8px 0;
+  padding: 14px 20px;
+  margin: 10px 0;
   cursor: pointer;
-  border-radius: 8px;
-  font-weight: 500;
-  color: #163172;
-  transition: 0.3s;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .sidebar li:hover,
 .sidebar li.active {
-  background: #1e56a0;
-  color: white;
+  background: linear-gradient(to right, var(--gold-main), var(--gold-light));
+  color: var(--navy-dark);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.25);
+  transform: translateX(4px);
 }
 
 .main-content {
   flex: 1;
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 2px 6px rgba(22, 49, 114, 0.1);
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(4, 18, 43, 0.08);
+}
+
+.main-content h2 {
+  color: var(--navy-dark);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--gold-main);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-weight: 600;
+  color: var(--navy-dark);
+  font-size: 1rem;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #f8fafc;
+  color: var(--navy-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--navy-light);
+  box-shadow: 0 0 0 3px rgba(26, 77, 181, 0.15);
+  background: #fff;
+}
+
+/* Gold Save Changes Button */
+.account-section .btn {
+  background: linear-gradient(to right, var(--gold-main), #fadc69, var(--gold-light));
+  color: var(--navy-dark) !important;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.account-section .btn:hover {
+  background: linear-gradient(to right, #fadc69, var(--gold-main));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
 }
 
 .wishlist-table {
@@ -95,54 +162,84 @@
   text-align: left;
 }
 
-.wishlist-table th,
+.wishlist-table th {
+  padding: 15px;
+  background: var(--navy-dark);
+  color: var(--gold-light);
+  font-weight: 600;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 .wishlist-table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
 }
 
 .wishlist-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  font-weight: 600;
+  color: var(--navy-dark);
 }
 
 .wishlist-img {
-  width: 60px;
-  height: 80px;
+  width: 70px;
+  height: 100px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .order-btn {
-  background-color: #1E56A0;
-  color: white;
+  background: linear-gradient(to right, var(--navy-main), var(--navy-light));
+  color: var(--gold-light);
   border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .order-btn:hover {
-  background-color: #163172;
+  background: linear-gradient(to right, var(--navy-dark), var(--navy-main));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(12, 45, 107, 0.2);
 }
 
 .remove-btn {
-  background-color: transparent;
-  border: none;
-  color: #c00;
-  font-size: 18px;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 8px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.2s ease;
 }
 
 .remove-btn:hover {
-  transform: scale(1.2);
+  background: #fecaca;
+  transform: scale(1.05);
 }
 
 .in-stock {
-  color: green;
-  font-weight: bold;
+  color: #16a34a;
+  font-weight: 700;
+  background: #dcfce7;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
 }
