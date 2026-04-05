@@ -299,7 +299,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 4px solid var(--gold-main);
+  border-bottom: none;
 }
 
 .overlay {
@@ -363,14 +363,19 @@
   color: var(--navy-dark);
 }
 
+.book-details-section {
+  background: #f4f7ff;
+  padding: 48px 0 60px;
+}
+
 .book-details-wrapper {
   display: flex;
-  gap: 56px;
+  gap: 40px;
   align-items: flex-start;
-  padding: 56px 8%;
+  padding: 48px 8% 0;
   max-width: 1300px;
   margin: 0 auto;
-  background: transparent;
+  background: #f4f7ff;
 }
 
 .book-details-image {
@@ -378,6 +383,7 @@
   text-align: center;
   position: sticky;
   top: 88px;
+  background: #f4f7ff;
 }
 
 .detail-img {
@@ -428,7 +434,8 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
   color: #0C2D6B;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: -0.5px;
 }
 
 .discount {
@@ -533,7 +540,7 @@
 
 .book-description {
   background: #fff;
-  margin: 0 8% 60px;
+  margin: 24px 8% 60px;
   padding: 36px 44px;
   border-radius: 20px;
   border: 1px solid rgba(12,45,107,0.07);
