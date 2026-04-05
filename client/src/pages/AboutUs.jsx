@@ -10,17 +10,17 @@ const AboutUs = () => {
         <div className="about-hero-content">
           <div className="about-eyebrow">✦ Our Story</div>
           <h1 className="about-hero-title">
-            Passionate About <span>Books.</span><br />Dedicated to <span>Readers.</span>
+            This is <span>Knova.</span><br />Your Next Chapter <span>Starts Here.</span>
           </h1>
           <p className="about-hero-sub">
-            Founded with a love for literature, Book Store is Sri Lanka's premier
-            destination for readers of all ages and interests.
+            Knova Book Store is Sri Lanka's premier destination for readers of all
+            ages and interests — where knowledge meets discovery.
           </p>
         </div>
         <div className="about-hero-image">
           <img
             src="https://res.cloudinary.com/dgdpuo8og/image/upload/v1761309991/bookstore_kvde0n.jpg"
-            alt="Book Store"
+            alt="Knova Book Store"
           />
         </div>
       </div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
           <div className="about-section-eyebrow">Our Mission</div>
           <h2 className="about-section-title">Why We Exist</h2>
           <p>
-            At Book Store, we believe every person deserves access to great books.
+            At Knova Book Store, we believe every person deserves access to great books.
             We are committed to making reading accessible, affordable, and delightful
             for everyone across Sri Lanka.
           </p>

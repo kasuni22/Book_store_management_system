@@ -10,7 +10,8 @@
 }
 
 .navbar-brand {
-  font-size: 1.8rem;
+  font-size: 1.45rem;
+  letter-spacing: -0.3px;
   font-weight: 700;
   text-decoration: none;
   background: linear-gradient(to right, var(--gold-light), var(--gold-main));

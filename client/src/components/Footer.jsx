@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-main">
 
         <div className="footer-brand">
-          <div className="footer-brand-logo">📚 Book Store</div>
+          <div className="footer-brand-logo">📚 Knova Book Store</div>
           <p className="footer-brand-desc">
             Sri Lanka's premium online book store. Connecting readers with
             thousands of titles across every genre — delivered to your door.
@@ -69,10 +69,10 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p className="footer-copyright">
-          © 2026 <span>Book Store</span>. All rights reserved. Built with ❤️ in Sri Lanka.
+          © 2026 <span>Knova Book Store</span>. All rights reserved. Built with ❤️ in Sri Lanka.
         </p>
         <div className="footer-badge">
-          📚 <span>5,000+</span> books &nbsp;•&nbsp; <span>10+</span> categories &nbsp;•&nbsp; Fast delivery
+          📚 <span>Knova Book Store</span> &nbsp;•&nbsp; <span>5,000+</span> books &nbsp;•&nbsp; Fast delivery
         </div>
       </div>
     </footer>
