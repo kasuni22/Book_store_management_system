@@ -141,7 +141,7 @@ const BookDetails = () => {
               onChange={(e) => setQuantity(Number(e.target.value))}
             />
             <button
-              className="btn add-to-cart"
+              className="add-to-cart"
               disabled={!book.inStock}
               onClick={handleOrder}
             >
