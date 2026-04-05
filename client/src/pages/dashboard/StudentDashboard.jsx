@@ -58,6 +58,13 @@ const StudentDashboard = () => {
     localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
   };
 
+  const getUserInitials = () => {
+    if (user.firstName && user.lastName) {
+      return (user.firstName[0] + user.lastName[0]).toUpperCase();
+    }
+    return "U";
+  };
+
   return (
     <div className="profile-page">
 
@@ -65,29 +72,40 @@ const StudentDashboard = () => {
         className="profile-header"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/dgdpuo8og/image/upload/v1762690488/7_dylrfs.jpg')"
+            "url('https://res.cloudinary.com/dgdpuo8og/image/upload/v1762690488/7_dylrfs.jpg')",
         }}
       >
-        <div className="overlay"></div>
-        <h1 className="profile-title">My Profile</h1>
-        <p>Home / My Profile</p>
+        <div className="overlay">
+          <div className="profile-header-content">
+            <h1 className="profile-title">My Profile</h1>
+            <p className="profile-breadcrumb">Home / <span>My Profile</span></p>
+          </div>
+        </div>
       </div>
 
       <div className="profile-container">
 
         <div className="sidebar">
+          <div className="sidebar-avatar">
+            <div className="avatar-circle">
+              {getUserInitials()}
+            </div>
+            <h3 className="avatar-name">{user.firstName} {user.lastName}</h3>
+            <p className="avatar-email">{user.email}</p>
+          </div>
+
           <ul>
             <li
               className={activeTab === "account" ? "active" : ""}
               onClick={() => setActiveTab("account")}
             >
-              <i className="fas fa-user"></i> My Account
+              <span className="sidebar-icon">👤</span> My Account
             </li>
             <li
               className={activeTab === "wishlist" ? "active" : ""}
               onClick={() => setActiveTab("wishlist")}
             >
-              <i className="fas fa-heart"></i> Wishlist
+              <span className="sidebar-icon">❤️</span> Wishlist
             </li>
           </ul>
         </div>
@@ -150,17 +168,21 @@ const StudentDashboard = () => {
                   }
                 }}
               >
-                💾 Save Changes
+                Save Changes
               </button>
             </div>
           )}
 
           {activeTab === "wishlist" && (
             <div className="wishlist-section">
-              <h2>My Wishlist 💙</h2>
+              <h2>My Wishlist</h2>
 
               {wishlist.length === 0 ? (
-                <p>You haven’t added any books yet.</p>
+                <div className="wishlist-empty">
+                  <div className="empty-icon">📂</div>
+                  <h3>Your wishlist is empty</h3>
+                  <p>Browse categories and add some books to your wishlist.</p>
+                </div>
               ) : (
                 <div className="wishlist-table">
                   <table>
@@ -183,16 +205,16 @@ const StudentDashboard = () => {
                             />
                             <span>{book.title}</span>
                           </td>
-                          <td>Rs. {book.price}</td>
+                          <td className="wishlist-price">Rs. {book.price}</td>
                           <td>
                             <span className="in-stock">In Stock</span>
                           </td>
                           <td>
                             <button
-                              className="btn order-btn"
+                              className="order-btn"
                               onClick={() => handleOrder(book._id)}
                             >
-                              📘 Order Book
+                              Order Book
                             </button>
                           </td>
                           <td>
@@ -200,7 +222,7 @@ const StudentDashboard = () => {
                               className="remove-btn"
                               onClick={() => handleRemove(book._id)}
                             >
-                              ❌
+                              ✕
                             </button>
                           </td>
                         </tr>
