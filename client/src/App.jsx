@@ -15,6 +15,7 @@ import CategoryBooks from './pages/CategoryBooks';
 import BookDetails from './pages/BookDetails';
 import ManageStudents from './pages/admin/ManageStudents';
 import AdminOrders from './pages/admin/AdminOrders';
+import Footer from './components/Footer';
 
 const App = () => {
   const location = useLocation();
@@ -86,6 +87,7 @@ const App = () => {
         <Route path="/category/:name" element={<CategoryBooks />} />
         <Route path="/book/:id" element={<BookDetails />} />
       </Routes>
+      <Footer />
     </>
   );
 };
