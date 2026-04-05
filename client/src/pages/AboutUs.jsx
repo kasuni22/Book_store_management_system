@@ -19,7 +19,7 @@ const AboutUs = () => {
         </div>
         <div className="about-hero-image">
           <img
-            src="https://res.cloudinary.com/dgdpuo8og/image/upload/v1761309991/bookstore_kvde0n.jpg"
+            src="https://res.cloudinary.com/dgdpuo8og/image/upload/q_auto/f_auto/v1775380138/photo6jpg_duv2ox.jpg"
             alt="Knova Book Store"
           />
         </div>
