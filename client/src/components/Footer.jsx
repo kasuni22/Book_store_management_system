@@ -1,82 +1,79 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../css/Footer.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../css/Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-glass">
-        <div className="footer-grid">
+      <div className="footer-main">
 
-          {/* Brand */}
-          <div className="footer-brand">
-            <div className="footer-logo">📚 Book Store</div>
-            <p>
-              Sri Lanka's premium online book store.
-              Connecting readers with thousands of
-              titles across every genre — delivered
-              to your door.
-            </p>
-            <div className="footer-socials">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="X">X</a>
-              <a href="#" aria-label="YouTube">▶</a>
-            </div>
+        <div className="footer-brand">
+          <div className="footer-brand-logo">📚 Book Store</div>
+          <p className="footer-brand-desc">
+            Sri Lanka's premium online book store. Connecting readers with
+            thousands of titles across every genre — delivered to your door.
+          </p>
+          <div className="footer-social">
+            <a href="#" className="social-btn" title="Facebook">f</a>
+            <a href="#" className="social-btn" title="Instagram">in</a>
+            <a href="#" className="social-btn" title="Twitter">𝕏</a>
+            <a href="#" className="social-btn" title="YouTube">▶</a>
           </div>
-
-          {/* Quick Links */}
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link to="/">→ Home</Link></li>
-              <li><Link to="/about">→ About Us</Link></li>
-              <li><Link to="/categories">→ Categories</Link></li>
-              <li><Link to="/my-orders">→ My Orders</Link></li>
-              <li><Link to="/my-profile">→ My Profile</Link></li>
-            </ul>
-          </div>
-
-          {/* Categories */}
-          <div className="footer-col">
-            <h4>Categories</h4>
-            <ul>
-              <li><Link to="/categories/new">→ New Arrivals</Link></li>
-              <li><Link to="/categories/education">→ Education</Link></li>
-              <li><Link to="/categories/novels">→ Novels</Link></li>
-              <li><Link to="/categories/science">→ Science & Tech</Link></li>
-              <li><Link to="/categories/children">→ Children's Books</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="footer-col">
-            <h4>Contact Us</h4>
-            <div className="footer-contact-item">
-              <span>📍</span>
-              <span>123 Book Lane,<br />Colombo 03, Sri Lanka</span>
-            </div>
-            <div className="footer-contact-item">
-              <span>📞</span>
-              <span>+94 11 234 5678</span>
-            </div>
-            <div className="footer-contact-item">
-              <span>✉</span>
-              <span>hello@bookstore.lk</span>
-            </div>
-            <div className="footer-contact-item">
-              <span>🕐</span>
-              <span>Mon – Sat: 9am – 6pm</span>
-            </div>
-          </div>
-
         </div>
+
+        <div className="footer-col">
+          <h4 className="footer-col-title">Quick Links</h4>
+          <ul className="footer-links">
+            <li><Link to="/">→ Home</Link></li>
+            <li><Link to="/aboutus">→ About Us</Link></li>
+            <li><Link to="/categories">→ Categories</Link></li>
+            <li><Link to="/myorders">→ My Orders</Link></li>
+            <li><Link to="/profile">→ My Profile</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h4 className="footer-col-title">Categories</h4>
+          <ul className="footer-links">
+            <li><Link to="/category/New Arrivals">→ New Arrivals</Link></li>
+            <li><Link to="/category/Education">→ Education</Link></li>
+            <li><Link to="/category/Novels">→ Novels</Link></li>
+            <li><Link to="/category/Science & Technology">→ Science & Tech</Link></li>
+            <li><Link to="/category/Children's Books">→ Children's Books</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h4 className="footer-col-title">Contact Us</h4>
+          <div className="footer-contact-item">
+            <span className="contact-icon">📍</span>
+            <span>123 Book Lane, Colombo 03, Sri Lanka</span>
+          </div>
+          <div className="footer-contact-item">
+            <span className="contact-icon">📞</span>
+            <span>+94 11 234 5678</span>
+          </div>
+          <div className="footer-contact-item">
+            <span className="contact-icon">✉️</span>
+            <span>hello@bookstore.lk</span>
+          </div>
+          <div className="footer-contact-item">
+            <span className="contact-icon">🕐</span>
+            <span>Mon – Sat: 9am – 6pm</span>
+          </div>
+        </div>
+
       </div>
 
-      {/* Bottom bar */}
+      <hr className="footer-divider" />
+
       <div className="footer-bottom">
-        <span>© 2026 <strong>Book Store</strong>. All rights reserved. Built with ❤️ in Sri Lanka.</span>
-        <span className="footer-badge">📚 5,000+ books · 10+ categories · Fast delivery</span>
+        <p className="footer-copyright">
+          © 2026 <span>Book Store</span>. All rights reserved. Built with ❤️ in Sri Lanka.
+        </p>
+        <div className="footer-badge">
+          📚 <span>5,000+</span> books &nbsp;•&nbsp; <span>10+</span> categories &nbsp;•&nbsp; Fast delivery
+        </div>
       </div>
     </footer>
   );
