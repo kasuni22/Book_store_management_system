@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 .footer {
-  background: var(--bg-color, #f7f9fc);
+  background-color: #0a1628;
   color: #8a9aba;
   font-family: 'DM Sans', sans-serif;
   padding-bottom: 0;
@@ -9,8 +9,8 @@
 }
 
 .footer-main {
-  background: rgba(26, 45, 74, 0.85);
-  border: 1px solid rgba(42, 64, 112, 0.8);
+  background: rgba(20, 38, 70, 0.75);
+  border: 1px solid rgba(100, 140, 200, 0.25);
   border-radius: 16px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -23,18 +23,18 @@
 
 .footer-brand-logo {
   font-family: 'Playfair Display', serif;
+  color: #c9a84c;
   font-size: 22px;
   font-weight: 700;
-  color: #c9a84c;
   margin-bottom: 14px;
   display: flex;
   align-items: center;
 }
 
 .footer-brand-desc {
+  color: #7a90b8;
   font-size: 14px;
   line-height: 1.7;
-  color: #7a90b8;
   max-width: 260px;
   margin-bottom: 24px;
 }
@@ -49,12 +49,12 @@
 }
 
 .footer-col-title::after {
-  content: "";
+  content: '';
   display: block;
   width: 40px;
   height: 2px;
   background: #c9a84c;
-  margin-top: 8px;
+  margin-top: 6px;
   margin-bottom: 14px;
 }
 
@@ -68,10 +68,10 @@
 }
 
 .footer-links a {
-  text-decoration: none;
   color: #8a9aba;
+  text-decoration: none;
   font-size: 14px;
-  transition: all 0.2s ease;
+  transition: color 0.2s, padding-left 0.2s;
   display: inline-flex;
   align-items: center;
 }
@@ -93,27 +93,27 @@
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all 0.2s ease;
+  margin-right: 8px;
+  transition: background 0.2s, color 0.2s;
   font-size: 0.9rem;
 }
 
 .social-btn:hover {
   background: #c9a84c;
   color: #0a1628;
-  transform: translateY(-2px);
 }
 
 .footer-contact-item {
   color: #8a9aba;
   font-size: 14px;
   display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
   align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
   line-height: 1.5;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .footer-bottom {
-  background: #080f1e;
+  background: #060e1e;
   padding: 14px 32px;
   display: flex;
   justify-content: space-between;
