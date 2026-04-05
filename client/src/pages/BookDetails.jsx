@@ -15,10 +15,8 @@ const BookDetails = () => {
   const [wishlist, setWishlist] = useState([]);
   const userEmail = localStorage.getItem("email") || "student@example.com";
 
-
   const handleAddToWishlist = () => {
     let storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
 
     if (storedWishlist.find((item) => item._id === book._id)) {
       alert(" This book is already in your wishlist!");
@@ -38,7 +36,6 @@ const BookDetails = () => {
     alert(" Book added to your wishlist!");
   };
 
-
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -50,7 +47,6 @@ const BookDetails = () => {
     };
     fetchCategories();
   }, []);
-
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -65,7 +61,6 @@ const BookDetails = () => {
   }, [id]);
 
   if (!book) return <p className="loading-text">Loading...</p>;
-
 
   const handleOrder = async () => {
     if (!book.inStock) return alert("Sorry, this book is out of stock.");
@@ -88,15 +83,9 @@ const BookDetails = () => {
   return (
     <div className="category-books-page">
 
-      <div
-        className="category-hero book-banner"
-        style={{
-          backgroundImage:
-            "url('https://res.cloudinary.com/dgdpuo8og/image/upload/v1762168368/9_bk0mab.jpg')",
-        }}
-      >
+      <div className="category-hero book-banner">
         <div className="overlay">
-          <h1 className="header-title">📖 Book Details</h1>
+          <h1 className="header-title">Book Details</h1>
           <div className="category-bar">
             {categories.map((cat) => (
               <span
@@ -126,10 +115,10 @@ const BookDetails = () => {
           <div className="price-section">
             <span className="old-price">Rs. {(book.price + 100).toFixed(2)}</span>
             <span className="new-price">Rs. {book.price.toFixed(2)}</span>
-
+            <span className="discount">Save Rs. 100</span>
           </div>
 
-          <p className="delivery-text">📦 Delivery in 5–7 working days</p>
+          <p className="delivery-text">📦 Delivery everywhere in Sri Lanka in 5–7 working days</p>
 
           <div className="quantity-cart">
             <label>Qty</label>
@@ -141,7 +130,7 @@ const BookDetails = () => {
               onChange={(e) => setQuantity(Number(e.target.value))}
             />
             <button
-              className="add-to-cart"
+              className="btn add-to-cart"
               disabled={!book.inStock}
               onClick={handleOrder}
             >
@@ -159,7 +148,7 @@ const BookDetails = () => {
             <p>
               <b>Availability:</b>{" "}
               <span className={book.inStock ? "in-stock" : "out-stock"}>
-                {book.inStock ? "In Stock" : "Out of Stock"}
+                {book.inStock ? "✓ In Stock" : "✗ Out of Stock"}
               </span>
             </p>
           </div>
@@ -172,7 +161,7 @@ const BookDetails = () => {
       </div>
 
       <div className="book-description">
-        <h2>Description</h2>
+        <h2>About This Book</h2>
         <p>{book.description || "No description available for this book."}</p>
       </div>
     </div>
