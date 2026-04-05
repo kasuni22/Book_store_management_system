@@ -8,15 +8,17 @@ const StudentDashboard = () => {
   const [user, setUser] = useState({});
   const [activeTab, setActiveTab] = useState("account");
   const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  const token = localStorage.getItem("token");
   const userEmail = localStorage.getItem("email");
 
   useEffect(() => {
-    if (!userEmail) {
-      alert("Please log in first!");
-      navigate("/login");
+    if (!token || !userEmail) {
+      setLoading(false);
+      return;
     }
-  }, [userEmail, navigate]);
+  }, [token, userEmail, navigate]);
 
   useEffect(() => {
     if (!userEmail) return;
@@ -64,6 +66,22 @@ const StudentDashboard = () => {
     }
     return "U";
   };
+
+  if (!token || !userEmail) {
+    return (
+      <div className="page-container">
+        <h1>My Profile</h1>
+        <div className="error-state">
+          <div className="error-icon">🔒</div>
+          <h3>Please Log In to View Your Profile</h3>
+          <p>You need to be signed in to access your profile and wishlist.</p>
+          <button className="btn" onClick={() => navigate('/login')}>
+            Sign In / Sign Up
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="profile-page">
@@ -159,7 +177,7 @@ const StudentDashboard = () => {
                 onClick={async () => {
                   try {
                     await axios.put(
-                      `http://localhost:3001/api/auth/${user.email}`,
+                      `https://book-store-management-system-server.onrender.com/api/auth/${user.email}`,
                       user
                     );
                     alert(" Profile updated successfully!");
