@@ -13,9 +13,17 @@ const BookDetails = () => {
   const [loading, setLoading] = useState(false);
 
   const [wishlist, setWishlist] = useState([]);
-  const userEmail = localStorage.getItem("email") || "student@example.com";
+  const userEmail = localStorage.getItem("email");
 
   const handleAddToWishlist = () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please log in to add books to your wishlist!");
+      navigate("/login");
+      return;
+    }
+
     let storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
     if (storedWishlist.find((item) => item._id === book._id)) {
@@ -63,7 +71,19 @@ const BookDetails = () => {
   if (!book) return <p className="loading-text">Loading...</p>;
 
   const handleOrder = async () => {
-    if (!book.inStock) return alert("Sorry, this book is out of stock.");
+    const token = localStorage.getItem("token");
+    const userEmail = localStorage.getItem("email");
+
+    if (!token || !userEmail) {
+      alert("Please log in to place an order!");
+      navigate("/login");
+      return;
+    }
+
+    if (!book.inStock) {
+      alert("Sorry, this book is out of stock.");
+      return;
+    }
 
     try {
       setLoading(true);
