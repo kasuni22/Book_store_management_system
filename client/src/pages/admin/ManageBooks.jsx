@@ -32,7 +32,7 @@ const ManageBooks = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/categories");
+      const res = await axios.get("https://book-store-management-system-server.onrender.com/api/categories");
       setCategories(res.data);
     } catch (err) {
       console.log("Error fetching categories:", err.message);
@@ -54,10 +54,10 @@ const ManageBooks = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:3001/api/books/${editingId}`, form);
+        await axios.put(`https://book-store-management-system-server.onrender.com/api/books/${editingId}`, form);
         alert("Book updated successfully!");
       } else {
-        await axios.post("http://localhost:3001/api/books", form);
+        await axios.post("https://book-store-management-system-server.onrender.com/api/books", form);
         alert("Book added successfully!");
       }
 
@@ -88,7 +88,7 @@ const ManageBooks = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this book?")) {
-      await axios.delete(`http://localhost:3001/api/books/${id}`);
+      await axios.delete(`https://book-store-management-system-server.onrender.com/api/books/${id}`);
       fetchBooks();
     }
   };

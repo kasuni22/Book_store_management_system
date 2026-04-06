@@ -93,7 +93,7 @@ const AdminDashboard = () => {
               const token = localStorage.getItem("token");
               try {
                 await axios.put(
-                  "http://localhost:3001/api/auth/update",
+                  "https://book-store-management-system-server.onrender.com/api/auth/update",
                   {
                     firstName: e.target.firstName.value,
                     lastName: e.target.lastName.value,
